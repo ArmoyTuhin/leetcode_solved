@@ -10,6 +10,6 @@ public:
             sum+=temp;
             n=n/10;
         }
-        return product - sum ;
+        return product-sum ;
     }
 };
