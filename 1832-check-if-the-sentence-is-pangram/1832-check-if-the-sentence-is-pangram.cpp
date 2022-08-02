@@ -1,27 +1,15 @@
 class Solution {
-public:  bool located(char ch, string str) {
-       for( auto it : str)
-       {
-           if(ch == it) return true;
-       }
-       return false;
-   }
 public:
     bool checkIfPangram(string sentence) {
-        bool flag = 0;
-        for(char ch='a'; ch<='z'; ch++)
+        bool al[26] ={};
+        for(int i = 0 ; i<sentence.size() ; i++)
         {
-            if(located(ch,sentence))
-            {
-                flag = 1;
-            }
-            else {
-                flag = 0;
-                break;
-            }
+            al[sentence[i]-'a'] = true ;
         }
-        return flag;
+        for(int i= 0 ; i<26 ; i++)
+        {
+            if(!al[i]) return false ;
+        }
+        return true;
     }
-      
-    
 };
